@@ -15,24 +15,14 @@
 # limitations under the License.
 
 class percona_repo::apt {
-  apt::key { 'CD2EFD2A':
-		ensure => present,
-		notify => Exec['percona_repo::apt-get update'],
-	}
-	
+  include apt
+  
 	apt::source { 'percona':
 		ensure => present,
 		include_src => true,
 		location => 'http://repo.percona.com/apt',
 		release => $::lsbdistcodename,
 		repos => 'main',
-		notify => Exec['percona_repo::apt-get update'],
-		require => Apt::Key['CD2EFD2A'],
-	}
-	
-	exec { 'percona_repo::apt-get update':
-		command => 'apt-get update',
-		path => '/usr/bin',
-		refreshonly => true,
+		key => "CD2EFD2A",
 	}
 }
