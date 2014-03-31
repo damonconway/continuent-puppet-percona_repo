@@ -17,12 +17,12 @@
 class percona_repo::apt {
   include apt
   
-	apt::source { 'percona':
-		ensure => present,
-		include_src => true,
-		location => 'http://repo.percona.com/apt',
-		release => $::lsbdistcodename,
-		repos => 'main',
-		key => "CD2EFD2A",
-	}
+  apt::source { 'percona':
+    ensure => present,
+    include_src => true,
+    location => 'http://repo.percona.com/apt',
+    release => $::lsbdistcodename,
+    repos => 'main',
+    key => "CD2EFD2A",
+  }
 }
