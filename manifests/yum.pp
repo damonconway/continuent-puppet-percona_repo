@@ -15,9 +15,16 @@
 # limitations under the License.
 
 class percona_repo::yum {
+
+  if ($operatingsystem =~ /(?i:amazon)/) {
+    $baseurl = "http://repo.percona.com/centos/${epel_version}/os/\$basearch/"
+  } else {
+    $baseurl = 'http://repo.percona.com/centos/$releasever/os/$basearch/'
+  }
+
   yumrepo { 'percona':
     descr => 'CentOS $releasever - Percona',
-    baseurl => 'http://repo.percona.com/centos/$releasever/os/$basearch/',
+    baseurl => $baseurl,
     gpgkey => 'http://www.percona.com/downloads/percona-release/RPM-GPG-KEY-percona',
     enabled => 1,
     gpgcheck => 1,
