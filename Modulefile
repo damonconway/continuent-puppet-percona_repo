@@ -1,5 +1,5 @@
 name 'continuent-percona_repo'
-version '0.2.0'
+version '0.2.1'
 source 'https://github.com/continuent/continuent-percona_repo'
 author 'Continuent'
 license 'Apache 2.0'
