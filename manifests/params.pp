@@ -25,7 +25,7 @@ class puppet_repo::params {
   $yum_gpgcheck = 1
   $yum_gpgkey   = 'http://www.percona.com/downloads/percona-release/RPM-GPG-KEY-percona'
 
-  if ($operatingsystem =~ /(?i:amazon)/) {
+  if ($::operatingsystem =~ /(?i:amazon)/) {
     $yum_baseurl = "http://repo.percona.com/centos/${epel_version}/os/\$basearch/"
   } else {
     $yum_baseurl = 'http://repo.percona.com/centos/$releasever/os/$basearch/'

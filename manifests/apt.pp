@@ -18,11 +18,11 @@ class percona_repo::apt {
   include apt
   
   apt::source { 'percona':
-    ensure      => $::percona_repo::apt_ensure,
-    include_src => $::percona_repo::apt_include_src,
-    location    => $::percona_repo::apt_location,
-    release     => $::percona_repo::apt_release,
-    repos       => $::percona_repo::apt_repos,
-    key         => $::percona_repo::apt_key,
+    ensure      => $percona_repo::apt_ensure,
+    include_src => $percona_repo::apt_include_src,
+    location    => $percona_repo::apt_location,
+    release     => $percona_repo::apt_release,
+    repos       => $percona_repo::apt_repos,
+    key         => $percona_repo::apt_key,
   }
 }

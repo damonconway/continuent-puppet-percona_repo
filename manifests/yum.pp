@@ -16,10 +16,10 @@
 
 class percona_repo::yum {
   yumrepo { 'percona':
-    enabled  => $::percona_repo::yum_enabled,
-    baseurl  => $::percona_repo::yum_baseurl,
-    descr    => $::percona_repo::yum_descr,
-    gpgcheck => $::percona_repo::yum_gpgcheck,
-    gpgkey   => $::percona_repo::yum_gpgkey,
+    enabled  => $percona_repo::yum_enabled,
+    baseurl  => $percona_repo::yum_baseurl,
+    descr    => $percona_repo::yum_descr,
+    gpgcheck => $percona_repo::yum_gpgcheck,
+    gpgkey   => $percona_repo::yum_gpgkey,
   }
 }
