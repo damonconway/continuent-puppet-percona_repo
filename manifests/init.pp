@@ -28,7 +28,7 @@ class percona_repo (
   $yum_enabled     = $percona_repo::params::yum_enabled,
   $yum_gpgcheck    = $percona_repo::params::yum_gpgcheck,
   $yum_gpgkey      = $percona_repo::params::yum_gpgkey
-) {
+) inherits percona_repo::params {
   if ($::operatingsystem =~ /(?i:centos|redhat|oel|amazon)/) {
     contain percona_repo::yum
   } elsif ($::operatingsystem =~ /(?i:debian|ubuntu)/) {
