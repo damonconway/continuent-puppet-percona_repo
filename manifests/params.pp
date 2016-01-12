@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-class puppet_repo::params {
+class percona_repo::params {
   # apt defaults
   $apt_ensure      = present
   $apt_include_src = true
