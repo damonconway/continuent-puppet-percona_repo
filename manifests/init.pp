@@ -30,7 +30,7 @@ class percona_repo (
   $yum_gpgkey      = $percona_repo::params::yum_gpgkey
 ) {
   if ($::operatingsystem =~ /(?i:centos|redhat|oel|amazon)/) {
-    include percona_repo::yum
+    contain percona_repo::yum
   } elsif ($::operatingsystem =~ /(?i:debian|ubuntu)/) {
     include percona_repo::apt
   } else {
